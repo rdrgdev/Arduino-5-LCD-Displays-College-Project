@@ -27,13 +27,13 @@ ISR(PCINT1_vect);
 
 void LCD_Init (void)
 {
-	LCD_DPin = 0xFF;		//Control LCD Pins (D4-D7)
-	_delay_ms(15);		//Wait before LCD activation
-	LCD_Action(0x02);	//4-Bit Control
-	LCD_Action(0x28);       //Control Matrix @ 4-Bit
-	LCD_Action(0x0c);       //Disable Cursor
-	LCD_Action(0x06);       //Move Cursor
-	LCD_Action(0x01);       //Clean LCD
+	LCD_DPin = 0xFF;		
+	_delay_ms(15);		
+	LCD_Action(0x02);	
+	LCD_Action(0x28);       
+	LCD_Action(0x0c);      
+	LCD_Action(0x06);      
+	LCD_Action(0x01);      
 	_delay_ms(2);
 }
 
@@ -54,9 +54,9 @@ void LCD_Action( unsigned char cmnd )
 
 void LCD_Clear()
 {
-	LCD_Action (0x01);		//Clear LCD
-	_delay_ms(2);			//Wait to clean LCD
-	LCD_Action (0x80);		//Move to Position Line 1, Position 1
+	LCD_Action (0x01);		
+	_delay_ms(2);			
+	LCD_Action (0x80);		
 }
 
 
@@ -78,7 +78,7 @@ void LCD_Print (char *str)
 		_delay_ms(2);
 	}
 }
-//Write on a specific location
+//Escreve em um local especifico (LCD)
 void LCD_Printpos (char row, char pos, char *str)
 {
 	if (row == 0 && pos<16)
@@ -462,9 +462,9 @@ int main(){
 	
 	
 	_delay_ms(100);
-	LCD_Init(); //Activate LCD
+	LCD_Init(); //Ativa LCD
 	LCD_Clear();
-	LCD_Print("UNIFACS");	//Begin writing at Line 1, Position 1
+	LCD_Print("UNIFACS");	//Começa a escrever na linha 1, coluna 1
 	LCD_Action(0xC0);
 	LCD_Print("Micro 2022");
 	_delay_ms(1000);
