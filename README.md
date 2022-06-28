@@ -1,5 +1,5 @@
 # Arduino-LCD-Display-College-Project
-A 5 LCD Displays project for college using 1 Arduino UNO on C++, simulating a smart-house concept. Controlling lamps, AC, TV and more. 
+A Smart-Home controller with a LCD Display project for college using 1 Arduino UNO on C++, simulating a smart-house concept. Controlling lamps, AC, TV and more. 
 
 
 
